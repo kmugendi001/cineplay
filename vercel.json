@@ -1,0 +1,24 @@
+{
+  "buildCommand": "npm run build --prefix client && npm install --prefix server",
+  "outputDirectory": "client/dist",
+  "framework": "vite",
+  "projectSettings": {
+    "installCommand": "npm install --prefix client && npm install --prefix server"
+  },
+  "functions": {
+    "server/**": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "server/index.js",
+      "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"]
+    },
+    {
+      "src": "/(.*)",
+      "dest": "client/dist/index.html"
+    }
+  ]
+}
