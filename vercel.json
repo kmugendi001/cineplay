@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "npm run build --prefix client && npm install --prefix server",
+  "buildCommand": "npm install --prefix client && npm run build --prefix client && npm install --prefix server",
   "outputDirectory": "client/dist",
   "functions": {
     "api/[...slug].js": {
